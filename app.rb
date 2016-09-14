@@ -31,6 +31,10 @@ get '/about' do
 	erb :about
 end
 
+get '/showusers' do
+	erb :showusers
+end
+
 get '/visit' do
 	erb :visit 
 end
@@ -68,7 +72,8 @@ post '/visit' do
 	erb "Ok! Ваше имя: #{@username}, ваш номер телефона: #{@phone}, время записи: #{@datetime}, ваш мастер: #{@barber} , Цвет волос: #{@color}"
 end
 
-get '/showusers' do
-"Hello World"
+post '/showusers' do
+
 end
+
 
