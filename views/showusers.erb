@@ -1,14 +1,13 @@
 <table class="table">
-	<tr>
-		<td>aa</td>
-		<td>bb</td>
-	</tr>
-	<tr>
-		<td>aa</td>
-		<td>bb</td>
-	</tr>
-	<tr>
-		<td>aa</td>
-		<td>bb</td>
-	</tr>
+
+		<% @results.each do |row| %>
+			<tr>
+				<td><%= row['name'] %></td>
+				<td><%= row['phone'] %></td>
+				<td><%= row['dateStamp'] %></td>
+				<td><%= row['barber'] %></td>
+				<td><%= row['colore'] %></td>
+			</tr>
+		<% end %>
+
 </table>
