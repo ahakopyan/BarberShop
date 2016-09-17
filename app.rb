@@ -22,9 +22,16 @@ def get_db
 	db.results_as_hash = true
 	return db
 end
+# Синтаксис из Синатры который выполняет код при каждом запуске
+# который позволяет не дублировать в нескольки местах код 
+before do
+	db = get_db
+	@barbers = db.execute 'select * from Barbers'
+end
 
 configure do	
 	db = get_db
+	# создали таблицу Users 
 	db.execute 'CREATE TABLE IF NOT EXISTS
 		"Users" 
 		(
@@ -35,7 +42,7 @@ configure do
 			"barber" TEXT,
 			"colore" TEXT
 		)'
-
+# создали дополнительную таблицу Barbers 
 	db.execute 'CREATE TABLE IF NOT EXISTS
 		"Barbers" 
 		(
