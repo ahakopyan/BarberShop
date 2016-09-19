@@ -40,9 +40,9 @@ configure do
 			"phone" TEXT,
 			"dateStamp" TEXT,
 			"barber" TEXT,
-			"colore" TEXT
+			"color" TEXT
 		)'
-# создали дополнительную таблицу Barbers 
+    # создали дополнительную таблицу Barbers 
 	db.execute 'CREATE TABLE IF NOT EXISTS
 		"Barbers" 
 		(
@@ -99,10 +99,11 @@ post '/visit' do
 			phone,
 			datestamp,
 			barber,
-			colore
+			color
+		)
 			values (?, ?, ?, ?, ?)', [@username, @phone, @datetime, @barber, @color]
 
-	erb "Ok! Ваше имя: #{@username}, ваш номер телефона: #{@phone}, время записи: #{@datetime}, ваш мастер: #{@barber} , Цвет волос: #{@color}"
+	erb "<h2>Спасибо, Вы успешно записались!</h2>"
 end
 
 post '/showusers' do
